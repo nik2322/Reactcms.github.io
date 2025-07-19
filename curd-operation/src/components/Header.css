@@ -1,0 +1,78 @@
+/* Header.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #333;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  gap: 20px;
+}
+
+.header-right a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.header-right a:hover,
+.header-right a.active {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+/* Hamburger Menu */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .header-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #menu-toggle:checked + .menu-icon + .header-right {
+    display: flex;
+    background-color: #333;
+  }
+
+  .header-right a {
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+}
